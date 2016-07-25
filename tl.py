@@ -24,10 +24,13 @@ def stateTL(dt):
     print "m = " + str(m) + ", k = " + str(k) + ", h = " + str(h)
 
     if dt >= 0 and dt < cpmk:
+        #atur lamput jadi merah, di atas baris ini
         return "merah"
     elif dt >= cpmk and dt < cpkh:
+        #atur lampu jadi merah + kuning, sembarang, di atas baris ini
         return "kuning"
     elif dt >= cpkh and dt < cphk:
+        #atur lampu jadi hijau, di atas baris ini
         if procthread.isAlive():
             print "masih melakukan proses di detik "+str(dt)
         else:

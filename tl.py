@@ -1,10 +1,16 @@
 #!/usr/bin/python
+# Code by M. Alfiyan Syamsuddin
+# Problem description:
+# Pemrosesan hanya terjadi pada hijau
+# waktu default tidak berubah, hanya dikurangi sesuai dengan nilai pengurangan @tambahan {code ifal}
+#
 
 import time, threading
 
+dh = 5 # default waktu hijau
 m = 5
 k = 1
-h = 5
+h = dh
 
 ba = m + k + h + k
 print "lama fase " + str(ba) + " detik "
@@ -12,6 +18,7 @@ print "lama fase " + str(ba) + " detik "
 def process():
     print "Melakukan proses #process"
     time.sleep(3) #pemrosesan video ifal ada di sini, tidak mengganggu timeline
+    # h = dh - penambahan
     print "Proses selesai #process"
     return 0
 
@@ -24,7 +31,7 @@ def stateTL(dt):
     print "m = " + str(m) + ", k = " + str(k) + ", h = " + str(h)
 
     if dt >= 0 and dt < cpmk:
-        #atur lamput jadi merah, di atas baris ini
+        #atur lampu jadi merah, di atas baris ini
         return "merah"
     elif dt >= cpmk and dt < cpkh:
         #atur lampu jadi merah + kuning, sembarang, di atas baris ini
